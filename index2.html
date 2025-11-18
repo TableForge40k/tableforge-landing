@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TableForge – Forge your army. Master your table.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="TableForge helps you build armies, track your collection, and master your tabletop games."
+  />
+
+  <style>
+    :root {
+      --bg: #000000;
+      --text: #ffffff;
+      --muted: #c7c7c7;
+      --accent: #f6a623; /* orange frame from the app */
+      --card-bg: #050505;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        system-ui, -system-ui, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1200px;
+      padding: 32px 20px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      align-items: center;
+      gap: 40px;
+    }
+
+    /* LEFT: phone screenshots */
+    .screens {
+      position: relative;
+      height: 480px;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .screens img {
+      position: absolute;
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+      border-radius: 32px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
+      border: 2px solid #111;
+      background: #000;
+    }
+
+    /* middle */
+    .screens img:nth-child(2) {
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+    }
+    /* left */
+    .screens img:first-child {
+      left: 0;
+      transform: translateX(-10%) scale(0.96);
+      z-index: 2;
+      opacity: 0.95;
+    }
+    /* right */
+    .screens img:last-child {
+      right: 0;
+      transform: translateX(10%) scale(0.96);
+      z-index: 1;
+      opacity: 0.9;
+    }
+
+    /* RIGHT: logo + copy */
+    .content {
+      text-align: center;
+    }
+
+    .logo {
+      margin-bottom: 24px;
+    }
+
+    .logo img {
+      max-width: 260px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 8px;
+    }
+
+    .brand {
+      font-size: 18px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .tagline {
+      font-size: 32px;
+      font-style: italic;
+      margin: 28px 0 18px;
+    }
+
+    .subcopy {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 32px;
+    }
+
+    .button-wrapper {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 40px;
+      border-radius: 999px;
+      border: 1px solid #ffffff;
+      color: #ffffff;
+      background: transparent;
+      text-decoration: none;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease,
+        box-shadow 0.2s ease, transform 0.1s ease;
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+
+    .cta:hover,
+    .cta:focus-visible {
+      background: #ffffff;
+      color: #000000;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
+      transform: translateY(-1px);
+    }
+
+    .cta:active {
+      transform: translateY(0);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+    }
+
+    .cta small {
+      display: block;
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* Footer-ish email hint for people who don't like mailto buttons */
+    .email-note {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .email-note a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .email-note a:hover {
+      text-decoration: underline;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .page {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+
+      .screens {
+        height: 420px;
+      }
+
+      .content {
+        order: -1;
+      }
+
+      .tagline {
+        font-size: 26px;
+      }
+
+      .subcopy {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .screens {
+        height: auto;
+        max-width: 320px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .screens img {
+        position: static;
+        transform: none !important;
+        height: auto;
+        width: 100%;
+        margin: 0 6px;
+        opacity: 1;
+      }
+
+      .hero {
+        gap: 24px;
+      }
+
+      .tagline {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="hero">
+      <!-- LEFT: app screens -->
+      <div class="screens">
+        <!-- Replace src paths with your actual filenames -->
+        <img
+          src="feed.png"
+          alt="TableForge feed showing Warhammer models and captions"
+        />
+        <img
+          src="units.png"
+          alt="TableForge unit list with Ork units and points"
+        />
+        <img
+          src="armies.png"
+          alt="TableForge armies view with saved army lists"
+        />
+      </div>
+
+      <!-- RIGHT: logo & copy -->
+      <div class="content">
+        <div class="logo">
+          <!-- Replace with your anvil + dice logo image -->
+          <img src="tableforge-logo.png" alt="TableForge logo" />
+          <div class="brand">TABLEFORGE</div>
+        </div>
+
+        <p class="tagline">Forge your army. Master your table.</p>
+
+        <p class="subcopy">
+          Build armies, track your collection, and master your tabletop.
+          Join the early access list so you're first to the table when
+          TableForge launches.
+        </p>
+
+        <div class="button-wrapper">
+          <!-- Mailto goes straight to your waiting list email -->
+          <div>
+            <a
+              class="cta"
+              href="mailto:tableforge40k@gmail.com?subject=Join%20the%20TableForge%20waiting%20list"
+            >
+              Join waiting list
+            </a>
+            <small>Opens your email client</small>
+          </div>
+        </div>
+
+        <div class="email-note">
+          Or email us directly at
+          <a href="mailto:tableforge40k@gmail.com">tableforge40k@gmail.com</a>.
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
