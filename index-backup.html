@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TableForge — Forge your army. Master your table.</title>
+  <meta name="description" content="TableForge: Build armies, track your collection, and master your tabletop. Join the early access list by email." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="TableForge — Forge your army. Master your table." />
+  <meta property="og:description" content="Build armies, track your collection, and master your tabletop. Join the early access list by emailing TableForge40k@gmail.com." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.example" />
+  <meta property="og:image" content="/assets/og-image.jpg" />
+
+  <link rel="icon" href="/assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0b0d10;
+      --panel: #10141a;
+      --muted: #99a2b2;
+      --text: #e6ebf2;
+      --accent: #8bd35e;
+    }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 10% 10%, rgba(74,193,255,.06), transparent 60%),
+                  radial-gradient(1000px 600px at 90% 20%, rgba(139,211,94,.07), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+    }
+    .container { max-width: 1080px; margin: 0 auto; padding: 24px; }
+    header { display: flex; align-items: center; justify-content: center; margin-top: 20px; }
+    .brand { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: inherit; }
+    .logo { width: 120px; height: auto; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(0,0,0,.25)); }
+    .wordmark { font-weight: 700; font-size: 1.4rem; letter-spacing: 0.2px; margin-top: 10px; }
+
+    .hero { text-align: center; margin-top: 60px; }
+    h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    p { color: var(--muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px; }
+
+    .email-link { display: inline-block; color: var(--accent); font-weight: 600; text-decoration: none; font-size: 1.1rem; border-bottom: 1px dashed var(--accent); transition: color 0.2s; }
+    .email-link:hover { color: #a8e880; }
+
+    footer { margin: 50px 0 20px; color: var(--muted); text-align: center; font-size: .95rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="#">
+        <img class="logo" src="image__2_-removebg-preview.png" alt="TableForge logo" onerror="this.onerror=null; this.src='assets/image__2_-removebg-preview.png'" />
+        <span class="wordmark"></span>
+      </a>
+    </header>
+
+    <section class="hero">
+      <h1>Forge your army. Master your table.</h1>
+      <p>Build armies, track your collection, and master your tabletop. Join the early access list by emailing us below.</p>
+      <a class="email-link" href="mailto:TableForge40k@gmail.com">📩 TableForge40k@gmail.com</a>
+    </section>
+
+    <footer>
+      © <span id="year"></span> TableForge
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
